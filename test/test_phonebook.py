@@ -136,3 +136,29 @@ class TestPhonebook:
         phonebook.add('CTTU', '123')
         result = phonebook.get_phonebook_reverse()
         assert result == expected_result
+
+    def test_get_name_by_number(self):
+        expected_result = 'SAMU'
+        phonebook = Phonebook()
+        phonebook.add('SAMU', '192')
+        result = phonebook.get_name_by_number('192')
+        assert result == expected_result
+
+    def test_get_name_by_nonexistent_number(self):
+        expected_result = 'Numero não encontrado'
+        phonebook = Phonebook()
+        result = phonebook.get_name_by_number('192')
+        assert result == expected_result
+
+    def test_change_number(self):
+        expected_result = "Numero alterado com sucesso"
+        phonebook = Phonebook()
+        phonebook.add('SAMU', '123')
+        result = phonebook.change_number('SAMU', '192')
+        assert result == expected_result
+
+    def test_change_nonexistent_number(self):
+        expected_result = 'Contato não encontrado'
+        phonebook = Phonebook()
+        result = phonebook.change_number('SAMU', '192')
+        assert result == expected_result

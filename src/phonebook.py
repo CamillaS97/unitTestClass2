@@ -99,3 +99,15 @@ class Phonebook:
         """
         self.entries.pop(name)
         return 'Numero deletado'
+
+    def change_number(self, name, number):
+        if name in self.entries:
+            self.entries[name] = number
+            return 'Numero alterado com sucesso'
+        return 'Contato não encontrado'
+
+    def get_name_by_number(self, number):
+        for dic_name, dic_number in self.entries.items():
+            if dic_number == number:
+                return dic_name
+        return 'Numero não encontrado'
