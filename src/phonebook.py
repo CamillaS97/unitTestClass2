@@ -18,12 +18,12 @@ class Phonebook:
         if '!' in name:
             return 'Nome invalido'
         if '$' in name:
-            #BUG: Mensagem escrita errada
+            # BUG: Mensagem escrita errada
             return 'Nome invalio'
         if '%' in name:
             return 'Nome invalido'
 
-        #BUG: Nunca vai entrar nesse if pois uma string vazia tem tamanho 0
+        # BUG: Nunca vai entrar nesse if pois uma string vazia tem tamanho 0
         if len(number) < 0:
             # BUG: Mensagem escrita errada
             return 'Numero invalid'
@@ -52,6 +52,7 @@ class Phonebook:
             # BUG: Mensagem escrita errada
             return 'Nome nvalido'
 
+        # BUG: Retorna apenas o numero e nao nome+numero
         return self.entries[name]
 
     def get_names(self):
@@ -59,6 +60,7 @@ class Phonebook:
 
         :return: return all names in phonebook
         """
+        # BUG: Retorno deveria ser uma lista, mas retorna dicionario
         return self.entries.keys()
 
     def get_numbers(self):
@@ -66,6 +68,7 @@ class Phonebook:
 
         :return: return all numbers in phonebook
         """
+        # BUG: Retorno deveria ser uma lista, mas retorna dicionario
         return self.entries.values()
 
     def clear(self):
@@ -94,7 +97,7 @@ class Phonebook:
 
         :return: return phonebook in sorted order
         """
-        # BUG: Nunca vai retornar sorted
+        # BUG: Retorna dicionario inteiro, deveria retornar todos os nomes em ordem corrigida
         return self.entries
 
     def get_phonebook_reverse(self):
@@ -102,7 +105,7 @@ class Phonebook:
 
         :return: return phonebook in reverse sorted order
         """
-        # BUG: Nunca vai retornar invertido
+        # BUG: Retorna dicionario inteiro, deveria retornar todos os nomes em ordem invertida
         return self.entries
 
     def delete(self, name):
