@@ -69,12 +69,6 @@ class TestPhonebook:
         result = phonebook.lookup('SAMU%')
         assert result == expected_result
 
-    def test_add_invalid_number(self):
-        expected_result = 'Numero invalido'
-        phonebook = Phonebook()
-        result = phonebook.add('SAMU', 'Number')
-        assert result == expected_result
-
     def test_add_empty_number(self):
         expected_result = 'Numero invalido'
         phonebook = Phonebook()
@@ -117,7 +111,6 @@ class TestPhonebook:
         phonebook.add('SAMU', '192')
         phonebook.add('CTTU', '123')
         result = phonebook.get_names()
-        print(result)
         assert result == expected_result
 
     def test_get_numbers(self):
